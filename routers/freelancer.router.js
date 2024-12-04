@@ -5,11 +5,11 @@ const FRouter = Router()
 
 const upload = multer({dest:'uplods/'})
 
-FRouter.get('/prject/show',AllProjectShow)
+FRouter.get('/project/show',AllProjectShow)
 FRouter.post('/project/create',upload.single('file'),ProjectCreaet)
 FRouter.patch('/project/update/:id',ProjectUpdate)
-FRouter.delete('/project/delete',ProjectDelete)
 FRouter.post('/project/export',ProjectExport)
+FRouter.delete('/project/delete',ProjectDelete)
 
 FRouter.post('/payment',Payment)
 
