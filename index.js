@@ -16,7 +16,7 @@ app.use('/Auth',userRouter)
 app.use('/Freelancer',FRouter)
 
 app.get("/",(req,res)=>{
-    req.status(201).json({success:true,message:"Welcome To freelancer Management System..."})
+    res.status(201).json({success:true,message:"Welcome To freelancer Management System..."})
 })
 app.listen(process.env.PORT,()=>{
     console.log("Server Start...");
