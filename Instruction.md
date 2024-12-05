@@ -155,6 +155,8 @@ npm install
 PORT=9090
 MONGODB_URL=mongodb+srv://freelancer:freelancer@cluster0.dgwjmgh.mongodb.net/freelancer?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=MY_JWT_SECRET_QUIZ_APPLICATION
+RZP_KEY=rzp_test_Xj543V6iMf41oK
+RZP_SECRET=rzp_test_Xj543V6iMf41oK
 
 ```
 
