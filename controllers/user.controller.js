@@ -24,16 +24,16 @@ const Register = async(req,res)=>{
         if(UserExtits){
             return res.status(400).json({success:false,message:"Email already exists"})
         }
-        let userObj = new User({
+        let userObj ={
             username,
             email,
             password,
             role
-        })
+        }
         setToken(userObj._id,res)
-        await userObj.save()
+        let UserData = await User.create(userObj)
         res.status(201).json({success:true,user:{
-            ...userObj._doc,
+            ...UserData._doc,
             password:""
         }})
     } catch (error) {
