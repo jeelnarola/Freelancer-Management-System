@@ -6,7 +6,7 @@ const Register = async(req,res)=>{
         let {username,email,password,role} = req.body;
 
         if(!username || !email || !password ){
-            return res.stutas(400).json({success:false,message:"All Field Required..."})
+            return res.status(400).json({success:false,message:"All Field Required..."})
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,7 +38,7 @@ const Register = async(req,res)=>{
         }})
     } catch (error) {
         console.log('Error In Register Controller :- ',error.message)
-        res.stutas(500).json({success:false,message:'Internal Server...'})
+        res.status(500).json({success:false,message:'Internal Server...'})
     }
 }
 
@@ -47,7 +47,7 @@ const Login = async(req,res)=>{
         let {email,password} = req.body;
 
         if(!email || !password ){
-            return res.stutas(400).json({success:false,message:"All Field Required..."})
+            return res.status(400).json({success:false,message:"All Field Required..."})
         }
 
         let UserExtits = await User.findOne({email:email})
@@ -67,7 +67,7 @@ const Login = async(req,res)=>{
         }
     } catch (error) {
         console.log('Error In Register Controller :- ',error.message)
-        res.stutas(500).json({success:false,message:'Internal Server...'})
+        res.status(500).json({success:false,message:'Internal Server...'})
     }
 }
 
