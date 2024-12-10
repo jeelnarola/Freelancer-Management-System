@@ -108,14 +108,11 @@ const ProjectExport = async(req,res)=>{
 
 const Payment =async(req,res)=>{
     let {userid,projectid,amount} = req.body;
-    console.log(process.env.RZP_KEY)
     try {
         let option={
             amount:amount*100,
         }
         razorpay.orders.create(option,async(err,order)=>{
-            console.log("Errrr",order)
-
             if(err){
                 res.send(err)
             }

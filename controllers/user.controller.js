@@ -20,7 +20,6 @@ const Register = async(req,res)=>{
         }
 
         let UserExtits = await User.findOne({email:email})
-        console.log("UserExtits",UserExtits)
         if(UserExtits){
             return res.status(400).json({success:false,message:"Email already exists"})
         }
